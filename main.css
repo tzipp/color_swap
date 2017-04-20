@@ -5,5 +5,28 @@ body {
 #target {
     width: 200px;
     height: 200px;
+}
+
+.white {
     background-color: white;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.black {
+    background-color: black;
+}
+
+.green {
+    background-color: green;
 }
