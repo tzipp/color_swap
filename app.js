@@ -5,47 +5,41 @@ var allowedClasses = ["white", "yellow", "blue", "green", "red", "black"];
 $(document).ready(function() {
     var target = $("#target");
 
-    $('#yellow').click(function() {
-        if (target.hasClass("yellow")) {
-            reset(target);
-        } else {
-            removeColors(target, "yellow");
-        }
+    $('#yellow').click(function(event) {
+        handleColor(target, "yellow");
     });
 
     $('#blue').click(function() {
-        if (target.hasClass("blue")) {
-            reset(target);
-        } else {
-            removeColors(target, "blue");
-        }
+        handleColor(target, "blue");
     });
 
     $('#green').click(function() {
-        if (target.hasClass("green")) {
-            reset(target);
-        } else {
-            removeColors(target, "green");
-        }
+        handleColor(target, "green");
     });
 
     $('#red').click(function() {
-        if (target.hasClass("red")) {
-            reset(target);
-        } else {
-            removeColors(target, "red");
-        }
+        handleColor(target, "red");
     });
 
     $('#black').click(function() {
-        if (target.hasClass("black")) {
-            reset(target);
-        } else {
-            removeColors(target, "black");
-        }
+        handleColor(target, "black");
     });
 
+    $('body').click(function() {
+        reset(target);
+    })
+
 });
+
+function handleColor(element, color) {
+    event.stopPropagation();
+
+    if (element.hasClass(color)) {
+        reset(element);
+    } else {
+        removeColors(element, color);
+    }
+}
 
 function reset(element) {
     removeColors(element, "white");
